@@ -9,16 +9,10 @@ import dev.wendyyanto.manual_di_sample.detail.module.DetailModule
 
 class DetailActivity : AppCompatActivity() {
 
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-
-    Injectors.inject(
-      DetailModule::class,
-      this
-    )
-
-    setContentView(R.layout.activity_main)
-
-    findViewById<TextView>(R.id.tv_test).text = "Detail Page"
-  }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Injectors.inject(DetailModule::class, this)
+        setContentView(R.layout.activity_main)
+        findViewById<TextView>(R.id.tv_test).text = "Detail Page"
+    }
 }
